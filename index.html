@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="javaScript" href="script.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <title>Job Listing Portal</title>
+</head>
+<body>
+    <div class="mainHeader">
+        <img src="bg-header-desktop.svg" alt="desktop header image" style="width: 100%;">
+    </div>
+    <div class="mobileHeader">
+        <img src="bg-header-mobile.svg" alt="mobile header image" style="width: 100%;">
+    </div>
+    
+    <div class="mainSearch">
+        <div class="inputTags">
+          <ul><input type="text" id="searchingTags" spellcheck="false" placeholder="Search Job by Title"></ul>
+        </div>
+        <div class="details" style="width: 70%; align-content: end;">
+          <button class="removeButton">Remove All</button>
+          <!-- <button class="submitButton">Search</button> -->
+        </div>
+    </div>
+    <div class="allJobs">
+        <!-- <div class="job">
+            <div class="jobContent">
+                <div class="picture">
+                    <img src="./images/photosnap.svg" alt="photosnap">
+                </div>
+                <div class="companyNameTime">
+                    <div class="company">
+                        <h5>Photosnap</h5>
+                        <div class="new">NEW!</div>
+                        <div class="featured">FEATURED</div>
+                    </div>
+                    <div class="position">
+                        <h3>Senior Frontend Developer</h3>
+                    </div>
+                    <div class="postContractLocation">
+                        <h6>1d ago</h6>
+                        <h6>Full Time</h6>
+                        <h6>USA Only</h6>
+                    </div>
+                </div>
+                <div class="languagesTools">
+                    <div class="languages">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Javascript</span>
+                    </div>
+                    <div class="tools">
+                    <span>Frontend</span>
+                    <span>Senior</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="job">
+
+        </div> -->
+    </div>
+    <div class="addButton">
+        <button class="addJobButton"><i class="fa-solid fa-plus"></i></button>
+    </div>
+    <div id="jobModal" class="modal">
+        <div class="modal-content">
+            <span class="close" style="width: 20px; height: 20px;">&times;</span>
+            <h2>Add New Job</h2>
+            <form id="jobForm">
+                <div class="form-group1">
+                    <label for="company" style="font-weight: bolder;">Company Name:</label>
+                    <input type="text" id="company" name="company" style="width: 70%;height: 30px; border-radius: 10px; border: none; background-color: hsl(180, 31%, 95%); outline: none; padding: 5px;" required>
+                </div>
+                <div class="form-group1">
+                    <label for="position" style="font-weight: bolder;">Position:</label>
+                    <input type="text" id="position" name="position" style="width: 70%;height: 30px; border-radius: 10px; border: none; background-color: hsl(180, 31%, 95%); outline: none; padding: 5px;" required>
+                </div>
+                <div class="form-group2">
+                    <label for="role" style="font-weight: bolder; margin-top: 15px; margin-left: 5px;">Role:</label>
+                    <input type="text" id="role" name="role" style="width: 20%;height: 30px; border-radius: 10px; border: none; background-color: hsl(180, 31%, 95%); outline: none; padding: 5px;" required>
+                    
+                    <label for="level" style="font-weight: bolder; margin-top: 15px; margin-left: 5px;">Level:</label>
+                    <input type="text" id="level" name="level" style="width: 20%;height: 30px; border-radius: 10px; border: none; background-color: hsl(180, 31%, 95%); outline: none; padding: 5px;" required>
+                </div>
+                <div class="form-group2">
+                    <label for="postedAt" style="font-weight: bolder; margin-top: 15px; margin-left: 5px;">Posted At:</label>
+                    <input type="text" id="postedAt" name="postedAt" style="width: 20%;height: 30px; border-radius: 10px; border: none; background-color: hsl(180, 31%, 95%); outline: none; padding: 5px;" required>
+                    
+                    <label for="contract" style="font-weight: bolder; margin-top: 15px; margin-left: 5px;">Contract:</label>
+                    <input type="text" id="contract" name="contract" style="width: 20%;height: 30px; border-radius: 10px; border: none; background-color: hsl(180, 31%, 95%); outline: none; padding: 5px;" required>
+                    
+                    <label for="location" style="font-weight: bolder; margin-top: 15px; margin-left: 5px;">Location:</label>
+                    <input type="text" id="location" name="location" style="width: 20%;height: 30px; border-radius: 10px; border: none; background-color: hsl(180, 31%, 95%); outline: none; padding: 5px;" required>
+                </div>
+                <div class="form-group1">
+                    <label for="languages" style="font-weight: bolder;">Languages: </label>
+                    <input type="text" id="languages" name="languages" placeholder="Enter Comma Seperated Values" style="width: 70%;height: 30px; border-radius: 10px; border: none; background-color: hsl(180, 31%, 95%); outline: none; padding: 5px;" required>
+                </div>
+                <div class="form-group1">
+                    <label for="tools" style="font-weight: bolder;">Tools: </label>
+                    <input type="text" id="tools" name="tools" placeholder="Enter Comma Seperated Values" style="width: 70%;height: 30px; border-radius: 10px; border: none; background-color: hsl(180, 31%, 95%); outline: none; padding: 5px;" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="submit" value="Add Job" style="width: 80px; height: 40px; background-color: #3d7d7d; border: none;margin-top: 10px; color: white; border-radius: 10px;">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
